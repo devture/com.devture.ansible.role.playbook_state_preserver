@@ -9,7 +9,7 @@
     - devture_playbook_state_preserver_uid
     - devture_playbook_state_preserver_gid
 
-- when: devture_playbook_state_preserver_vars_preservation_dst | bool
+- when: "devture_playbook_state_preserver_vars_preservation_dst != ''"
   ansible.builtin.import_tasks: "{{ role_path }}/tasks/preserve_vars.yml"
 
 - when: devture_playbook_state_preserver_commit_hash_preservation_enabled | bool
